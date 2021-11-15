@@ -3,6 +3,7 @@ body {
   opacity: 0.95;
   background-size: 7px 7px;
   background-image: repeating-linear-gradient(45deg, #086788 0, #086788 0.7px, #F0C808 0, #FFF1D0 50%);
+  display: flex;
 }
 
 h1 {
@@ -14,6 +15,10 @@ h1 {
   border: 0px;
 }
 
+div.main {
+  display: grid;                   /* [1] */
+  place-content: center;   
+}
 
 li {
   font-family: Arial, Helvetica, sans-serif;
@@ -40,14 +45,6 @@ p > img {
   height: auto;
   display: block;
   margin-right: auto;
-}
-
-details {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  max-width: 300px;
-  padding: 4px;
-  border: 2px darkslategray;
 }
 
 div.terminal {

@@ -24,9 +24,9 @@
         </script>
     </head>
     <body>
-        
-        <button type="button" class="collapse"><h1>1. Introduction and Context</h1></button>
-        <div class="container">
+        <div class="main">
+            <button type="button" class="collapse"><h1>1. Introduction and Context</h1></button>
+            <div class="container">
         
         <p>
             In this tutorial we will learn how to setup a <b>Python</b> environment for <b>Machine Learning</b> on Linux.
@@ -48,14 +48,11 @@
             <div class="terminal"><code class="language-bash" id="term1"> echo $PATH</code>  <button class="copy" onclick="CopyMe('echo $PATH')"><img class="clipboard" src="../copy2.png"></button> </div>
         </p>
         <p>
-
-        </p>
-        <p>
             For this tutorial we will be using the minimal version of anaconda: <b>miniconda</b>
         </p>
-    </div>
-    <button type="button" class="collapse"><h1>2. Installing <code>miniconda/anaconda</code></h1></button>
-    <div class="container">
+            </div>
+            <button type="button" class="collapse"><h1>2. Installing <code>miniconda/anaconda</code></h1></button>
+            <div class="container">
         <p>
             Firstly download the latest Linux 64-bit version of <b> miniconda</b> from the <a href="https://docs.conda.io/en/latest/miniconda.html#linux-installers" target="_blank">official website</a> using your browser of choice.
             Now, let's run the installation script from the terminal:
@@ -75,21 +72,55 @@
                 </code>
             </div>
         </p>
-        </div>
-        <button type="button" class="collapse"><h1>3. Creating our first environment</h1></button>
-        <div class="container">
+            </div>
+            <button type="button" class="collapse"><h1>3. Creating our first environment</h1></button>
+            <div class="container">
         <p>
             We are going to create an environment tailored for running the latest version of <b>tensorflow</b> available, with python 3.9. This will be our main environment for machine learning and data science activities.
         </p>
         <p>
-            <b>conda</b> allows us to create new environments form the terminal 
+            <b>conda</b> allows us to create new environments form the terminal. Using the following command we will create a new environment named <code>tf2</code> (you can use whatever name you like) with python version 3.9. 
+            <div class="terminal"><code class="language-bash" id="term1"> conda create -n tf2 python=3.9</code>  <button class="copy" onclick="CopyMe('conda create -n tf2 python=3.9')"><img class="clipboard" src="../copy2.png"></button> </div>
         </p>
-        </div>
-        <button type="button" class="collapse"><h1>4. Understanding <code>git</code> Basic Concepts</h1></button>
-        <div class="container">
-        </div>
-        <button type="button" class="collapse"><h1>5. Python and Jupyter Notebooks</h1></button>
-        <div class="container">
+        <p>
+            In order to switch between environments from the terminal use the command <code>conda activate</code> followed by the name of the environment.
+            <div class="terminal"><code class="language-bash" id="term1"> conda activate tf2</code>  <button class="copy" onclick="CopyMe('conda activate tf2')"><img class="clipboard" src="../copy2.png"></button> </div>
+        </p>
+        <p>
+            You can check the python version in the newly-created environment by running <code>python --version</code>. In order to check the packages installed in the environment use:
+            <div class="terminal"><code class="language-bash" id="term1"> pip freeze</code>  <button class="copy" onclick="CopyMe('pip freeze')"><img class="clipboard" src="../copy2.png"></button> </div>
+        </p>
+        <p>
+            Right now the environment is empty. We are going to learn how to install packages in the next section.
+        </p>
+            </div>
+            <button type="button" class="collapse"><h1>4. Package Management Tools</h1></button>
+            <div class="container">
+                <p>
+                    <code>conda</code> comes with with its own package manager and custom repositories. Python itself already has a package manager called <b>pip</b>. When installing packages either of those can be used, but since the repositories and dependency trees are completely different, errors can easily occur. It is recommended to stick to using only one package manager for all installations. For this tutorial we will use <code>pip</code> as our package manager of choice because it has a larger collection of packages available.
+                </p>
+                <p>
+                    First, make sure you have activated the correct conda environment. Use <code>pip install</code> followed by a list of packages to install.
+                    <div class="terminal"><code class="language-bash" id="term1"> pip install scikit-learn matplotlib tensorflow</code>  <button class="copy" onclick="CopyMe('pip install scikit-learn matplotlib tensorflow')"><img class="clipboard" src="../copy2.png"></button> </div>
+                </p>
+                <p>
+                    This will install:
+                    <ul>
+                        <li><code>scikit-learn</code>: a library for easy setting up simple machine learning applications </li>
+                        <li><code>tensorflow</code>: the main framework used for machine learning in this tutorial</li>
+                        <li><code>matplotlib</code>: offers basic plotting functionality</li>
+                    </ul>
+                </p>
+                <p>
+                    <code>pip freeze</code> will know show the installed packages alongside all their dependencies (there are a lot of them 😆)
+                </p>
+            </div>
+            <button type="button" class="collapse"><h1>5. Understanding <code>git</code> Basic Concepts</h1></button>
+            <div class="container">
+            </div>
+            <button type="button" class="collapse"><h1>6. Python and Jupyter Notebooks</h1></button>
+            <div class="container">
+            </div>
         </div>
         <script>
             var coll = document.getElementsByClassName("collapse");
@@ -106,6 +137,6 @@
                 }
               });
             }
-            </script>
+        </script>
     </body>
 </html>
