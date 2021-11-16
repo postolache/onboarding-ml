@@ -6,10 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="tutorial.css">
         <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark.min.css">
         <!-- Load syntax highlighter  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
         <script>
             function CopyMe(TextToCopy) {
                 var TempText = document.createElement("input");
@@ -87,14 +86,46 @@
             <div class="terminal"><code class="language-bash" id="term1"> conda activate tf2</code>  <button class="copy" onclick="CopyMe('conda activate tf2')"><img class="clipboard" src="copy2.png"></button> </div>
         </p>
         <p>
-            You can check the python version in the newly-created environment by running <code>python --version</code>. In order to check the packages installed in the environment use:
+            You can check the python version in the newly-created environment by running <code class="inline">python --version</code>. In order to check the packages installed in the environment use:
             <div class="terminal"><code class="language-bash" id="term1"> pip freeze</code>  <button class="copy" onclick="CopyMe('pip freeze')"><img class="clipboard" src="copy2.png"></button> </div>
         </p>
         <p>
             Right now the environment is empty. We are going to learn how to install packages in the next section.
         </p>
             </div>
-            <button type="button" class="collapse"><h1>4. Package Management Tools</h1></button>
+            <button type="button" class="collapse"><h1>4. Python from the Terminal</h1></button>
+            <div class="container">
+                <p>
+                    Being a very versatile language, <b>python</b> can be ran in many ways. Since it is an <i>interpreted</i> language, you have to pass the code to a <b>python interpreter</b> on all platforms this can be achieved through the terminal. We can start an interactive python session from the terminal by just running <code class="inline">python</code> from the terminal. Make sure you have activated the correct environment first. Then, try your hand at the following commands:
+                    <div class="interpreter">
+                    <pre><code class="language-python">print("hello world")    # basic printing of strings
+49%7                    # basic math operations
+nums = [1, 2, 3, 4, 5]  # defining variables
+sum(nums)               # builtin functions
+
+exit()                  # quit the python interpreter</code></pre>
+                    </div>
+                </p>
+                <p>
+                    You may also pass the code to the interpreter directly from the terminal shell by using the <code>-c</code> argument, as in the example below. You will notice that this program will run indefinitely, so it may be a good moment to remember that the shortcut <code>CTRL+C</code> will instantly kill te running process in the terminal.
+                    <div class="terminal"><code class="language-bash" id="term1"> python -c "while(True): print(42)"</code>  <button class="copy" onclick="CopyMe('python -c \'while(True): print(42)\'')"><img class="clipboard" src="copy2.png"></button> </div>
+                </p>
+                <p>
+                    Although this may be useful in a pinch for simple programs and basic math, the most common way of running a python script is by passing a file to the interpreter. Let's create a simple program called <code>yell.py</code> using only the terminal. Using the <code>nano</code> text editor, create a file named <code>yell.py</code>:
+                    <div class="terminal"><code class="language-bash" id="term1"> nano yell.py</code>  <button class="copy" onclick="CopyMe('nano yell.py')"><img class="clipboard" src="copy2.png"></button> </div>
+                </p>
+                <p>
+                    Add the following lines of code and write the file with <code>CTRL+O</code> followed by <code>ENTER</code>. You can then close <code>nano</code> with <code>CTRL+X</code>.
+                    <div class="interpreter">
+                        <pre><code class="language-python">name = input("What is your name?\n")
+print("HELLO, ", name.upper())</code></pre>
+                        </div>
+                </p>
+                <p>
+                    To run our script just use the file as an argument to the python interpreter: <code class="inline">python yell.py</code>. The script will read the users name from the keyboard and print a greeting message in <code>CAPS LOCK</code>
+                </p>
+            </div>
+            <button type="button" class="collapse"><h1>5. Python Package Management Tools</h1></button>
             <div class="container">
                 <p>
                     <code>conda</code> comes with with its own package manager and custom repositories. Python itself already has a package manager called <b>pip</b>. When installing packages either of those can be used, but since the repositories and dependency trees are completely different, errors can easily occur. It is recommended to stick to using only one package manager for all installations. For this tutorial we will use <code>pip</code> as our package manager of choice because it has a larger collection of packages available.
@@ -115,7 +146,7 @@
                     <code>pip freeze</code> will know show the installed packages alongside all their dependencies (there are a lot of them).
                 </p>
             </div>
-            <button type="button" class="collapse"><h1>5. Understanding <code>git</code> Basic Concepts</h1></button>
+            <button type="button" class="collapse"><h1>6. Understanding <code>git</code> Basic Concepts</h1></button>
             <div class="container">
                 <p>Have you ever added a new feature to your code that completely <i>borked</i> everything? We all did! For this reason it is really useful to keep track of all the history of changes to your codebase. <code>git</code> is designed to do just that.
                 </p>
@@ -123,9 +154,29 @@
                     A git repository keeps track of all of the modification you made on your code and archives it in a hidden folder usually <code>*project*/.git/</code>. Whatever happens you can access any previous state of your project and restore anything you may eventually break.
                 </p>
                 <p>
+                    One important feature is the ability to save your <code>git</code> repository online. This is invaluable when multiple people are contributing to the same project and allows all developers to work from various different machines.
+                </p>
+                <p>
+                    This tutorial is, in fact, contained in a repository hosted on <a href="https://github.com/ioandinu/onboarding-ml">github.com</a>. Anyone can access and copy the contents through <code>git</code>. Before continuing to the last section let's use <code>git clone</code> to download a copy of the tutorial repository. Go to the home folder with <code class="inline">cd ~</code> and run the following command:
+                    <div class="terminal"><code class="language-bash" id="term1"> git cone https://github.com/ioandinu/onboarding-ml.git</code>  <button class="copy" onclick="CopyMe('git clone https://github.com/ioandinu/onboarding-ml.git')"><img class="clipboard" src="copy2.png"></button> </div>
+                </p>
+                <p>
+                    You should now have a <i>clone</i> of the repository stored locally. You can check the changes made to the code by going into the newly created folder and running:
+                    <div class="terminal"><code class="language-bash" id="term1"> git status</code>  <button class="copy" onclick="CopyMe('git status')"><img class="clipboard" src="copy2.png"></button> </div>
+                </p>
             </div>
-            <button type="button" class="collapse"><h1>6. Python and Jupyter Notebooks</h1></button>
+            <button type="button" class="collapse"><h1>7. Jupyter Notebooks</h1></button>
             <div class="container">
+                <p>Writing code directly in the python interactive interpreter offers a lot of flexibility and allows for faster debugging and experimentation. Wouldn't it be great if you could execute your scripts in the same interactive way? This is what Jupyter notebook is designed for. First, let's install it in our environment: 
+                    <div class="terminal"><code class="language-bash" id="term1"> pip install jupyter</code>  <button class="copy" onclick="CopyMe('pip install jupyter')"><img class="clipboard" src="copy2.png"></button> </div>
+                </p>
+                <p>
+                    ...
+                </p>
+                <p>
+                    The rest of this tutorial will be presented through jupyter notebooks.
+                </p>
+                
             </div>
         </div>
         <script>
@@ -144,5 +195,6 @@
               });
             }
         </script>
+        <script>hljs.highlightAll();</script>
     </body>
 </html>

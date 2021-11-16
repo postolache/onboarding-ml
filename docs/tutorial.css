@@ -4,6 +4,7 @@ body {
   background-size: 7px 7px;
   background-image: repeating-linear-gradient(45deg, #086788 0, #086788 0.7px, #F0C808 0, #FFF1D0 50%);
   display: flex;
+  color: #086788;
 }
 
 h1 {
@@ -59,6 +60,19 @@ code.language-bash {
 
   align-self: center;
   font-size: 16px;
+}
+
+code.inline {
+  background: #F0C808;
+}
+
+pre {
+ display: inline-block;
+ text-align: left;
+ font-size: 16px;
+}
+div.interpreter{
+  text-align: center;
 }
 
 p {
