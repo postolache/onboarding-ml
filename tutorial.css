@@ -15,10 +15,6 @@ h1 {
   border: 0px;
 }
 
-div.main {
-  display: grid;                   /* [1] */
-  place-content: center;   
-}
 
 li {
   font-family: Arial, Helvetica, sans-serif;
