@@ -2,3 +2,9 @@
 .DS_store
 MLcourses/
 mlhep2020-assignments/
+03. Classification and Decision Trees/.ipynb_checkpoints/decision-trees-checkpoint.ipynb
+03. Classification and Decision Trees/.ipynb_checkpoints/logistic-regression-checkpoint.ipynb
+.gitignore
+01. Jupyter and numpy/.ipynb_checkpoints/jupyter-numpy-checkpoint.ipynb
+02. Data Handling and Linear Regression/.ipynb_checkpoints/data-handling-checkpoint.ipynb
+02. Data Handling and Linear Regression/.ipynb_checkpoints/regression-boston-housing-checkpoint.ipynb
