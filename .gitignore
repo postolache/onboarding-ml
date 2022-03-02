@@ -8,3 +8,5 @@ mlhep2020-assignments/
 01. Jupyter and numpy/.ipynb_checkpoints/jupyter-numpy-checkpoint.ipynb
 02. Data Handling and Linear Regression/.ipynb_checkpoints/data-handling-checkpoint.ipynb
 02. Data Handling and Linear Regression/.ipynb_checkpoints/regression-boston-housing-checkpoint.ipynb
+.ipynb_checkpoints/.gitignore-checkpoint
+04. Tensorflow Intro/.ipynb_checkpoints/tensorflow-intro-checkpoint.ipynb
